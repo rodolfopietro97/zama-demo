@@ -1,11 +1,19 @@
-import type { Metadata } from "next";
+import "@rainbow-me/rainbowkit/styles.css";
+import { Metadata } from "next";
+import { Henny_Penny } from "next/font/google";
+import Providers from "../components/Providers";
 import "../globals.css";
-import { Inter } from "next/font/google";
+import { PageLayout } from "./PageLayout";
+
+/**
+ * Dynamic import of the Providers
+ */
+// const Providers = dynamic(() => import("../components/Providers"));
 
 /**
  * Init the font to use
  */
-const layoutFontToUse = Inter({ subsets: ["latin"] });
+const layoutFontToUse = Henny_Penny({ weight: "400", subsets: ["latin"] });
 
 /**
  * Metadata of the page
@@ -22,7 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${layoutFontToUse.className}`}>{children}</body>
+      <body className={`${layoutFontToUse.className}`}>
+        <Providers>
+          <PageLayout>{children}</PageLayout>
+        </Providers>
+      </body>
     </html>
   );
 }

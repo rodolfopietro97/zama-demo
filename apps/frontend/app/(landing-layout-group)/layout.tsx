@@ -22,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${layoutFontToUse.className} text-gray-50/90`}>
+      <body className={`${layoutFontToUse.className} text-dark/90`}>
         {/* FIXED Div to have the gradient background */}
-        <div className="fixed bg-gradient-to-t to-[#2d2d2d]/90 from-[#7d7d7d]/90  to-40% h-screen w-screen -z-10"></div>
+        <div className="fixed bg-gradient-to-t to-[#f8d549]/90 from-[#f2b559]/90  to-40% h-screen w-screen -z-10"></div>
 
         <div className="flex flex-col items-center justify-center h-screen px-5">
           {children}
