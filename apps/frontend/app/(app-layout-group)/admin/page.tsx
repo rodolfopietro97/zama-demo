@@ -115,8 +115,8 @@ function Connected({ walletAdress }: { walletAdress: string }) {
           {isActiveRiddle ? (
             <div className="py-10">
               <Subtitle>
-                There is an active riddle!. <br />
-                So you can't change it.
+                The current riddle is active.
+                <br /> So you can't change it.
               </Subtitle>
             </div>
           ) : (
