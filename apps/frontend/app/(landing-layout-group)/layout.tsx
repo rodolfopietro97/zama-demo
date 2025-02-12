@@ -26,7 +26,7 @@ export default function RootLayout({
         {/* FIXED Div to have the gradient background */}
         <div className="fixed bg-gradient-to-t to-[#f8d549]/90 from-[#f2b559]/90  to-40% h-screen w-screen -z-10"></div>
 
-        <div className="flex flex-col items-center justify-center h-screen px-5">
+        <div className="flex flex-col items-center justify-center min-h-screen px-5">
           {children}
         </div>
       </body>
