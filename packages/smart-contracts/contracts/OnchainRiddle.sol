@@ -7,17 +7,17 @@ contract OnchainRiddle {
     bytes32 private answerHash;
     address public winner;
     bool public isActive;
+    // @NOTE: Add this field to easily get how many times an user has won
+    mapping(address => uint256) public userWins;
 
     event RiddleSet(string riddle);
-    // @NOTE: add riddle data to the event
+    // @NOTE: add riddle data to the event and remove the Winner event
     event AnswerAttempt(
         address indexed user,
-        bool correct,
+        bool indexed correct,
         string riddle,
         string answer
     );
-    // @NOTE: add winner data to the event
-    event Winner(address indexed user, string riddle, string answer);
 
     modifier onlyBot() {
         require(msg.sender == bot, "Only bot can call this function");
@@ -47,7 +47,9 @@ contract OnchainRiddle {
         if (keccak256(abi.encodePacked(_answer)) == answerHash) {
             winner = msg.sender;
             isActive = false;
-            emit Winner(msg.sender, riddle, _answer);
+
+            // @NOTE: Increment the user's win count
+            userWins[msg.sender] += 1;
         }
 
         emit AnswerAttempt(msg.sender, winner == msg.sender, riddle, _answer);

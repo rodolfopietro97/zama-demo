@@ -17,11 +17,10 @@ export const Button: React.FC<{
     <button
       onClick={onClick}
       className={clsx(
-        "hover:shadow-none shadow-[5px_5px_rgba(0,0,0,1)] px-5 py-3 bg-white  text-black border border-1 border-black",
+        "hover:shadow-none shadow-[5px_5px_rgba(0,0,0,1)] px-5 py-3 bg-white text-black border border-1 border-black disabled:bg-slate-200 disabled:shadow-none",
         className
       )}
       disabled={disabled}
-      // href={href}
     >
       {isLoading !== undefined && isLoading ? (
         <div role="status">
