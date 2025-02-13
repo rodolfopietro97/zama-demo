@@ -12,12 +12,18 @@ This repository is a **monorepo** developed with **Turborepo**, containing the f
 
 Follow these steps to build and run the Zama demo:
 
-### 1️⃣ Build the Demo
+### 1️⃣ Build the Demo and Deploy the contract
 
 Run the following command to compile both the **smart contracts** and the **frontend**:
 
 ```sh
 yarn build
+```
+
+After, you will be able to deploy the smart contracts
+
+```sh
+yarn deploy
 ```
 
 ### 2️⃣ Retrieve the Deployed Contract Address
