@@ -11,9 +11,11 @@ const OnchainRiddle = buildModule("OnchainRiddle", (moduleBuilder) => {
   // Deploy the OnchainRiddle contract
   const onchainRiddle = moduleBuilder.contract("OnchainRiddle", [], {});
 
-  // Add 1 simple riddle
-  const riddleQuestion = "What has keys but can't open locks?";
-  const riddleAnswer = "A piano";
+  // Add 1 simple riddle to start with
+  const riddleQuestion = "0";
+  const riddleAnswer = "1";
+
+  // Set the riddle
   moduleBuilder.call(onchainRiddle, "setRiddle", [
     riddleQuestion,
     ethers.keccak256(ethers.toUtf8Bytes(riddleAnswer)),
