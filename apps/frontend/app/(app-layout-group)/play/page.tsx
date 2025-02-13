@@ -9,6 +9,7 @@ import {
   useWriteContract,
 } from "wagmi";
 import { Button } from "../../components/Button";
+import { Modal } from "../../components/Modal";
 import { NotConnectedPage } from "../../components/NotConnectedPage";
 import { Subtitle, Title } from "../../components/Typography";
 import {
@@ -172,37 +173,18 @@ function Connected({ walletAdress }: { walletAdress: string }) {
           <Subtitle>Attempts</Subtitle>
           <ul>
             {attemptsEvents.map((event, index) => {
-              const mySubmission = event.logs[0].args["user"] === walletAdress;
+              const isMySubmission =
+                event.logs[0].args["user"] === walletAdress;
               const isWinnerSubmission = event.logs[0].args["correct"];
 
-              if (mySubmission) {
-                if (!isWinnerSubmission) {
-                  return (
-                    <li key={index}>
-                      <p className="my-2">You have not win 😭</p>
-                    </li>
-                  );
-                }
-              } else {
-                return (
-                  <li key={index}>
-                    <p className="my-2">
-                      {event.logs[0].args["user"] as string}:
-                    </p>
-                    <p>
-                      {event.logs[0].args["answer"] as string} -{" "}
-                      {event.logs[0].args["riddle"] as string}
-                    </p>
-                  </li>
-                );
-              }
+              const user = isMySubmission ? "You" : event.logs[0].args["user"];
+              const result = isWinnerSubmission ? "Win 🎉" : "Loose 😭";
 
               return (
                 <li key={index}>
-                  <p>{event.logs[0].args["answer"] as string}</p>
-                  <p>{event.logs[0].args["correct"] as string}</p>
-                  <p>{event.logs[0].args["riddle"] as string}</p>
-                  <p>{event.logs[0].args["user"] as string}</p>
+                  <p className="my-2">
+                    {user} - {result}
+                  </p>
                 </li>
               );
             })}
@@ -228,11 +210,14 @@ function Connected({ walletAdress }: { walletAdress: string }) {
   /**
    * Component to display when the user is the winner
    */
-  const WinnerComponent = () => {
+  const WinnerModal = () => {
     return (
-      <div className="flex flex-col items-center justify-center text-center gap-3 gap-y-10">
-        <Title>You are the winner! 🎉</Title>
-      </div>
+      <Modal
+        isOpen={isWinner}
+        setIsOpen={setIsWinner}
+        title="You are the winner! 🎉"
+        description="Congratulations! You have won the riddle game."
+      />
     );
   };
 
@@ -241,7 +226,7 @@ function Connected({ walletAdress }: { walletAdress: string }) {
     isActiveRiddle.data !== null &&
     isActiveRiddle.data
   ) {
-    return isWinner ? <WinnerComponent /> : <IsActiveRiddleComponent />;
+    return isWinner ? <WinnerModal /> : <IsActiveRiddleComponent />;
   } else {
     return <NoActiveRiddleComponent />;
   }
