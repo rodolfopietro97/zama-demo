@@ -112,7 +112,9 @@ function Connected({ walletAdress }: { walletAdress: string }) {
             </Subtitle>
           </div>
           {/* Change riddle */}
-          {isActiveRiddle ? (
+          {isActiveRiddle.data !== undefined &&
+          isActiveRiddle.data !== null &&
+          isActiveRiddle.data ? (
             <div className="py-10">
               <Subtitle>
                 The current riddle is active.
@@ -142,7 +144,7 @@ function Connected({ walletAdress }: { walletAdress: string }) {
                   value={newRiddleAnswer}
                 />
                 {newRiddleAnswer !== "" && (
-                  <p className="my-5">
+                  <p className="my-5 visible">
                     Answer hash: <br />
                     <span className="text-xs font-bold">{answerHash}</span>
                   </p>
