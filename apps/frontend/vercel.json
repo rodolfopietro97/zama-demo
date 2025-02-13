@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/update-riddle",
+      "schedule": "*/10 * * * *"
+    }
+  ]
+}
