@@ -27,6 +27,7 @@
     "@repo/eslint-config": "*",
     "@repo/tailwind-config": "*",
     "@repo/typescript-config": "*",
+    "@repo/const": "*",
     "@types/node": "^22.12.0",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",

@@ -1,38 +1,5 @@
 import { QueryClient } from "@tanstack/react-query";
 
-import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { bscTestnet, zetachainAthensTestnet } from "viem/chains";
-
-/**
- * Wagmi configuration
- */
-export const wagmiConfig = getDefaultConfig({
-  appName: "Riddle Game",
-  projectId: "YOUR_PROJECT_ID",
-  chains: [
-    // mainnet,
-    // sepolia,
-    // Zetachain testnet
-    zetachainAthensTestnet,
-    // BNB testnet
-    bscTestnet,
-    // @NOTE: Use it if you want to use hardhat or your local blockchain
-    // {
-    //   id: 31337,
-    //   name: "GoChain Testnet",
-    //   nativeCurrency: {
-    //     decimals: 18,
-    //     name: "GO",
-    //     symbol: "GO",
-    //   },
-    //   rpcUrls: {
-    //     default: { http: ["http://127.0.0.1:8545"] },
-    //   },
-    // },
-  ],
-  ssr: true,
-});
-
 /**
  * onChainRiddle contract address
  */

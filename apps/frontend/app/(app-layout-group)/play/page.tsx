@@ -1,5 +1,6 @@
 "use client";
 
+import { onChainRiddleABI, onChainRiddleAddress } from "@repo/const";
 import { simulateContract } from "@wagmi/core";
 import { useState } from "react";
 import {
@@ -11,12 +12,8 @@ import {
 import { Button } from "../../components/Button";
 import { Modal } from "../../components/Modal";
 import { NotConnectedPage } from "../../components/NotConnectedPage";
+import { wagmiConfig } from "../../components/Providers";
 import { Subtitle, Title } from "../../components/Typography";
-import {
-  onChainRiddleABI,
-  onChainRiddleAddress,
-  wagmiConfig,
-} from "../../utils/const";
 
 /**
  * Component to display when the user is connected with the wallet
