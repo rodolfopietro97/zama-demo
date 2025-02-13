@@ -17,7 +17,7 @@ export const deployAccount = {
  * onChainRiddle contract address
  */
 export const onChainRiddleAddress =
-  "0x58f0c80Bf5C10B8dA35Fd1a0fb0D0051e6696aBB";
+  "0x1bD9a0b4b1c1942e457C2f986FB3749b6299bd3F";
 
 /**
  * onChainRiddle contract abi
