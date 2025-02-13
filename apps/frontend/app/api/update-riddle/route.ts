@@ -4,6 +4,7 @@ import { bscTestnet } from "viem/chains";
 
 export async function GET(request: Request) {
   try {
+    // Initialize the client
     const viemClient = createPublicClient({
       chain: bscTestnet,
       transport: http(),

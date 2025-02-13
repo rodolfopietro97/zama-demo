@@ -1,5 +1,3 @@
-import { QueryClient } from "@tanstack/react-query";
-
 /**
  * onChainRiddle contract address
  */
@@ -162,8 +160,3 @@ export const onChainRiddleABI = [
     type: "function",
   },
 ] as const;
-
-/**
- * Wagmi query client
- */
-export const wagmiQueryClient = new QueryClient();

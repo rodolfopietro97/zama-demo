@@ -1,10 +1,14 @@
 "use client";
 
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { bscTestnet, zetachainAthensTestnet } from "viem/chains";
 import { WagmiProvider } from "wagmi";
-import { wagmiQueryClient } from "../../utils/const";
+
+/**
+ * Wagmi query client
+ */
+export const wagmiQueryClient = new QueryClient();
 
 /**
  * Wagmi configuration
