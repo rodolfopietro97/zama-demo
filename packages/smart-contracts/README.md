@@ -1,13 +1,20 @@
-# Sample Hardhat Project
+# Zama Demo - Smart Contracts Deployment Guide
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This document provides detailed instructions for building and deploying the smart contracts for the Zama demo.
 
-Try running some of the following tasks:
+## ⚠️ Important Notice
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+All contracts will be deployed on the **Binance Smart Chain (BSC) Testnet**. This network will be used consistently throughout the entire demo.
+
+## 🔧 Step 1: Build the Smart Contracts
+
+Run `yarn build`
+
+## 🔧 Step 2: Deploy the Smart Contracts
+
+Run `yarn deploy`
+
+## 🔧 Step 3: Copy the contracts code
+
+1. Into the file `ignition/deployments/chain-97/deployed_addresses.json` you will fine the contract address.
+2. Paste it into the `zama-demo/packages/const/const.ts` file

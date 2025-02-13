@@ -1,6 +1,10 @@
 {
   "name": "smart-contracts",
   "version": "1.0.0",
+  "scripts": {
+    "build": "hardhat compile",
+    "deploy": "rm -rf ./ignition/deployments/* && hardhat ignition deploy ignition/modules/OnchainRiddle.ts --network bscTestnet"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
