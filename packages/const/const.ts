@@ -1,4 +1,19 @@
 /**
+ * Account used to deploy the contract and to interact with it.
+ *
+ * @NOTE: This accounts have founds on the Binance Smart Chain Testnet.
+ * @NOTE: You will not be rich by stealing this account. 🤑
+ * @NOTE: Never do this in production or zama will not hire you. 🤓
+ */
+export const deployAccount = {
+  mnemonics:
+    "vivid wonder cram deliver loan model enough shop resemble logic need since",
+  count: 2,
+  networkUrl: "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
+  chainId: 97,
+};
+
+/**
  * onChainRiddle contract address
  */
 export const onChainRiddleAddress =

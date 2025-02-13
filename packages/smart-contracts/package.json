@@ -6,6 +6,7 @@
     "deploy": "rm -rf ./ignition/deployments/* && hardhat ignition deploy ignition/modules/OnchainRiddle.ts --network bscTestnet"
   },
   "devDependencies": {
+    "@repo/const": "*",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
     "@nomicfoundation/hardhat-ignition": "^0.15.9",

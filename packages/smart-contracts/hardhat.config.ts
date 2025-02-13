@@ -1,4 +1,5 @@
 import "@nomicfoundation/hardhat-toolbox";
+import { deployAccount } from "@repo/const";
 import { HardhatUserConfig } from "hardhat/config";
 
 const config: HardhatUserConfig = {
@@ -9,12 +10,11 @@ const config: HardhatUserConfig = {
      * Binance Smart Chain Testnet
      */
     bscTestnet: {
-      url: "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
-      chainId: 97,
+      url: deployAccount.networkUrl,
+      chainId: deployAccount.chainId,
       accounts: {
-        mnemonic:
-          "vivid wonder cram deliver loan model enough shop resemble logic need since",
-        count: 2,
+        mnemonic: deployAccount.mnemonics,
+        count: deployAccount.count,
       },
     },
   },
